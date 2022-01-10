@@ -28,6 +28,7 @@
     "@nestjs/swagger": "^5.1.5",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
+    "dotenv": "^10.0.0",
     "mongoose": "^6.1.5",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
@@ -73,6 +74,9 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
-    "coverageReporters" : ["json", "html"]
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   }
 }
