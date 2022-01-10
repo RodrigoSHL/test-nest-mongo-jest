@@ -30,6 +30,21 @@ describe('UsersController (e2e)', () => {
       });
   });
 
+  it('/users/id (GET)', () => {
+    const urlWithId = '/users/61dc5c58af80cbd48647b851'
+    const mockData = { name: 'example', lastName: 'example', email: 'example@gmail.com' };
+    return request(app.getHttpServer())
+      .get(urlWithId)
+      .expect(200)
+      .expect((res) => {
+        const data = res.body;
+
+        expect(data).toHaveProperty('email', mockData.email);
+        expect(data).toHaveProperty('lastName', mockData.lastName);
+        expect(data).toHaveProperty('name', mockData.name);
+      });
+  });
+
   describe('/users (POST)', () => {
     it('must return status 201 when operation is successful', () => {
       const mockData = { name: 'example', lastName: 'example', email: 'example@gmail.com' };
